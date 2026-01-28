@@ -154,14 +154,14 @@ app.get('/', async (req, res) => {
           </thead>
           <tbody>
             ${data.map(row => `
-              <tr>
-                <td>${row.name}</td>
-                <td>$$    {row.price_usd}</td>
-                <td>${parseFloat(row.circulating_balance).toLocaleString('en-US')}</td>
-                <td>${row.tp_off_season}</td>
-                <td>    $${parseFloat(row.market_cap).toLocaleString('en-US')}</td>
-                <td>$${row.price_per_tp}</td>
-              </tr>
+                <tr>
+                    <td style="text-align: left;">${row.name}</td>
+                    <td style="text-align: right;">$${Number(row.price_usd).toFixed(5)}</td>
+                    <td style="text-align: right;">${Number(row.circulating_balance).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
+                    <td style="text-align: right;">${row.tp_off_season ? Number(row.tp_off_season).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) : 'N/A'}</td>
+                    <td style="text-align: right;">$${Number(row.market_cap).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
+                    <td style="text-align: right; font-weight: bold;">$${Number(row.price_per_tp).toLocaleString('en-US', { minimumFractionDigits: 4, maximumFractionDigits: 6 })}</td>
+                </tr>
             `).join('')}
           </tbody>
         </table>
