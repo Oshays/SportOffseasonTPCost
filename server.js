@@ -139,14 +139,14 @@ app.get('/', async (req, res) => {
         </style>
       </head>
       <body>
-        <h1>Player Cost per TP (Sorted by Lowest $/TP)</h1>
-        <p>Refresh page to update data. Data fetched live from Tenero API + OffSeasonTP.csv.</p>
+        <h1>Cost of Off-Season TP by Player</h1>
+        <p>Refresh page to update data.</p>
         <table id="tpTable" class="display">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Price (USD)</th>
-              <th>Circulating Balance</th>
+              <th>Player</th>
+              <th>Share Price</th>
+              <th>Active Shares</th>
               <th>TP Off-Season</th>
               <th>Market Cap</th>
               <th>Price per TP</th>
